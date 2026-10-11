@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="430" viewBox="0 0 1100 430" role="img" aria-label="System architecture">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L9,4 L0,8 Z" fill="#4facfe"/>
+    </marker>
+    <style>
+      .box { rx:14; ry:14; }
+      .t  { font-family: Segoe UI, Helvetica, Arial; }
+      .ttl{ font-size:19px; font-weight:700; fill:#ffffff; }
+      .sub{ font-size:13px; fill:#dbe9f4; }
+      .lbl{ font-size:13px; fill:#4facfe; font-weight:600; }
+      .lbl2{ font-size:12px; fill:#90a4ae; }
+    </style>
+  </defs>
+
+  <rect width="1100" height="430" fill="#0f171f"/>
+
+  <!-- OpenMV -->
+  <g>
+    <rect class="box" x="40" y="60" width="200" height="110" fill="#1f6feb"/>
+    <text class="t ttl" x="140" y="100" text-anchor="middle">OpenMV H7 Plus</text>
+    <text class="t sub" x="140" y="128" text-anchor="middle">OV5640 5MP</text>
+    <text class="t sub" x="140" y="150" text-anchor="middle">USB MJPEG stream</text>
+  </g>
+
+  <!-- Pi -->
+  <g>
+    <rect class="box" x="330" y="40" width="240" height="150" fill="#c2410c"/>
+    <text class="t ttl" x="450" y="80" text-anchor="middle">Raspberry Pi 4B</text>
+    <text class="t sub" x="450" y="108" text-anchor="middle">bridge.py (pyserial)</text>
+    <text class="t sub" x="450" y="130" text-anchor="middle">ffmpeg &#8594; H.264</text>
+    <text class="t sub" x="450" y="152" text-anchor="middle">+ timestamp watermark</text>
+    <text class="t sub" x="450" y="174" text-anchor="middle">self-healing push</text>
+  </g>
+
+  <!-- Local MediaMTX -->
+  <g>
+    <rect class="box" x="330" y="300" width="240" height="90" fill="#166534"/>
+    <text class="t ttl" x="450" y="338" text-anchor="middle">Local MediaMTX</text>
+    <text class="t sub" x="450" y="364" text-anchor="middle">RTSP / HLS / WebRTC (LAN)</text>
+  </g>
+
+  <!-- Cloud -->
+  <g>
+    <rect class="box" x="680" y="40" width="250" height="150" fill="#7c3aed"/>
+    <text class="t ttl" x="805" y="80" text-anchor="middle">Alibaba Cloud ECS</text>
+    <text class="t sub" x="805" y="108" text-anchor="middle">MediaMTX relay (Hong Kong)</text>
+    <text class="t sub" x="805" y="130" text-anchor="middle">WebRTC :8889 / HLS :8888</text>
+    <text class="t sub" x="805" y="152" text-anchor="middle">publish auth</text>
+    <text class="t sub" x="805" y="174" text-anchor="middle">LL-HLS / WebRTC</text>
+  </g>
+
+  <!-- App -->
+  <g>
+    <rect class="box" x="680" y="300" width="250" height="90" fill="#0e7490"/>
+    <text class="t ttl" x="805" y="338" text-anchor="middle">Android App</text>
+    <text class="t sub" x="805" y="364" text-anchor="middle">WebRTC &#8594; sub-second latency</text>
+  </g>
+
+  <!-- arrows -->
+  <line x1="240" y1="115" x2="328" y2="115" stroke="#4facfe" stroke-width="3" marker-end="url(#arrow)"/>
+  <text class="t lbl" x="284" y="104" text-anchor="middle">USB</text>
+
+  <line x1="450" y1="190" x2="450" y2="298" stroke="#4facfe" stroke-width="3" marker-end="url(#arrow)"/>
+  <text class="t lbl" x="495" y="250" text-anchor="middle">RTSP</text>
+
+  <line x1="570" y1="115" x2="678" y2="115" stroke="#4facfe" stroke-width="3" marker-end="url(#arrow)"/>
+  <text class="t lbl" x="624" y="104" text-anchor="middle">RTMP</text>
+
+  <line x1="805" y1="190" x2="805" y2="298" stroke="#4facfe" stroke-width="3" marker-end="url(#arrow)"/>
+  <text class="t lbl" x="862" y="250" text-anchor="middle">WebRTC / HLS</text>
+
+  <text class="t lbl2" x="40" y="410">Data path: camera &#8594; edge gateway &#8594; cloud relay &#8594; client. Local path stays on the LAN for zero-latency viewing.</text>
+</svg>

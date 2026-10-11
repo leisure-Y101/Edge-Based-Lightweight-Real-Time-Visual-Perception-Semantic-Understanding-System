@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-label="Edge-Based Real-Time Visual Monitoring">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f2027"/>
+      <stop offset="50%" stop-color="#203a43"/>
+      <stop offset="100%" stop-color="#2c5364"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4facfe"/>
+      <stop offset="100%" stop-color="#43e97b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="320" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1200" height="6" fill="url(#accent)"/>
+  <text x="60" y="120" font-family="Segoe UI, Helvetica, Arial" font-size="50" font-weight="700" fill="#ffffff">Edge-Based Real-Time Visual Monitoring</text>
+  <text x="60" y="170" font-family="Segoe UI, Helvetica, Arial" font-size="26" fill="#8fd3ff">OpenMV &#183; Raspberry Pi 4B &#183; Alibaba Cloud &#183; WebRTC / HLS</text>
+  <text x="60" y="220" font-family="Segoe UI, Helvetica, Arial" font-size="21" fill="#b0bec5">Sub-second latency &#183; Self-hosted &#183; Timestamp watermark &#183; Auto-recovery</text>
+  <g fill="#cfd8dc" font-family="Segoe UI, Helvetica, Arial" font-size="16">
+    <text x="62" y="280">&#128247; Capture</text>
+    <text x="230" y="280">&#9881; Encode + Watermark</text>
+    <text x="500" y="280">&#9729; Relay</text>
+    <text x="640" y="280">&#128241; View anywhere</text>
+  </g>
+</svg>
