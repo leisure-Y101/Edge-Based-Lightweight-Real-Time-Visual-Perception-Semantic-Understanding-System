@@ -1,0 +1,37 @@
+logLevel: info
+
+rtsp: true
+rtspAddress: :8554
+
+rtmp: true
+rtmpAddress: :1935
+
+hls: true
+hlsAddress: :8888
+hlsAlwaysRemux: true
+hlsVariant: lowLatency
+hlsSegmentDuration: 1s
+hlsPartDuration: 200ms
+hlsSegmentCount: 7
+
+webrtc: true
+webrtcAddress: :8889
+webrtcAdditionalHosts: [<云端公网IP>]
+
+authInternalUsers:
+  - user: pusher
+    pass: <推流密码>
+    ips: []
+    permissions:
+      - action: publish
+        path: cam
+  - user: any
+    pass:
+    ips: []
+    permissions:
+      - action: read
+        path: cam
+
+paths:
+  cam:
+    source: publisher

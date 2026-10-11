@@ -1,0 +1,15 @@
+[Unit]
+Description=MediaMTX streaming server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=leisure
+WorkingDirectory=/home/leisure/mediamtx
+ExecStart=/home/leisure/mediamtx/mediamtx /home/leisure/mediamtx/mediamtx.yml
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

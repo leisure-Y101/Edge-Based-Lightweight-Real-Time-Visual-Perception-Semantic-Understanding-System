@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+
+# MediaMTX runtime
+*.log
+auto.key
+server.key
+server.crt
+
+# Secrets (never commit real credentials)
+secrets.md
+.env
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

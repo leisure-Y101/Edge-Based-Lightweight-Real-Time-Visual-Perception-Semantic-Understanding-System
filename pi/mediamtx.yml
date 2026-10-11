@@ -1,0 +1,26 @@
+# MediaMTX 精简配置（放在 mediamtx 二进制同目录）
+# 完整默认配置里 HLS/WebRTC 本来就是开的，这里只做最小化并显式声明路径。
+#
+# 手机观看地址（把 <PI_IP> 换成树莓派局域网 / Tailscale 的 IP）：
+#   HLS   : http://<PI_IP>:8888/cam/index.m3u8     (通用性最好)
+#   WebRTC: http://<PI_IP>:8889/cam                (延迟最低，浏览器直接看)
+#   RTSP  : rtsp://<PI_IP>:8554/cam                (VLC)
+
+logLevel: info
+
+rtsp: yes
+rtspAddress: :8554
+
+hls: yes
+hlsAddress: :8888
+hlsAlwaysRemux: yes
+
+webrtc: yes
+webrtcAddress: :8889
+webrtcAllowOrigin: '*'
+# 外网/Tailscale 访问时，把树莓派对外 IP 填进来（WebRTC 需要知道可达地址）
+# webrtcAdditionalHosts: [192.168.1.10, 100.x.x.x]
+
+paths:
+  cam:
+    source: publisher

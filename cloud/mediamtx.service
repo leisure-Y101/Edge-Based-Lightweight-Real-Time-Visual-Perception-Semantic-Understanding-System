@@ -1,0 +1,15 @@
+[Unit]
+Description=MediaMTX relay
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/mediamtx
+ExecStart=/root/mediamtx/mediamtx /root/mediamtx/mediamtx.yml
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
